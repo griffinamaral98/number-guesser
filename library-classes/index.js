@@ -28,4 +28,33 @@ class Media {
       this._isCheckedOut = true;
     }
   }
+
+  getAverageRating() {
+    const initialVal = 0;
+    let ratingSum = this._ratings.reduce((accumulator, currentVal) => {
+      (accumulator + currentVal) / this._ratings.length;
+      initialVal;
+    });
+    return ratingSum;
+  }
+
+  addRating(rating) {
+    this._ratings.push(rating);
+  }
+}
+
+class Book extends Media {
+  constructor(title, author, pages) {
+    super(title);
+    this._author = author;
+    this._pages = pages;
+  }
+
+  get author() {
+    return this._author;
+  }
+
+  get pages() {
+    return this._pages;
+  }
 }

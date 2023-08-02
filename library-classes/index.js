@@ -43,6 +43,7 @@ class Media {
   }
 }
 
+// Book subclass that inherits props and functions from Media
 class Book extends Media {
   constructor(title, author, pages) {
     super(title);
@@ -59,6 +60,7 @@ class Book extends Media {
   }
 }
 
+// Movie subclass that inherits props and functions from Media
 class Movie extends Media {
   constructor(title, director, runTime) {
     super(title);
@@ -75,6 +77,7 @@ class Movie extends Media {
   }
 }
 
+// Create a new Book
 const historyOfEverything = new Book(
   "A Short History of Nearly Everything",
   "Bill Bryson",
@@ -88,3 +91,13 @@ historyOfEverything.addRating(4);
 historyOfEverything.addRating(5);
 historyOfEverything.addRating(5);
 console.log(historyOfEverything.getAverageRating());
+
+//Create a new Movie
+const speed = new Movie("Speed", "Jan de Bont", 116);
+speed.toggleCheckedOutStatus();
+console.log(speed.isCheckedOut);
+
+speed.addRating(1);
+speed.addRating(1);
+speed.addRating(5);
+console.log(speed.getAverageRating());
